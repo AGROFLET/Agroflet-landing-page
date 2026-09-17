@@ -1,1 +1,429 @@
+<!DOCTYPE html>
+<html lang="es" data-lang="es">
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AgroFlet — Digitalizando la trazabilidad del transporte agrícola en Perú</title>
+  <meta name="description"
+    content="AgroFlet digitaliza la trazabilidad del transporte agrícola en Perú. Confianza, transparencia y eficiencia en cada envío." />
+  <link rel="icon" href="assets/images/logo.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body>
+
+  <header id="header" class="header">
+    <div class="header__inner container">
+      <a href="#hero" class="header__logo" aria-label="AgroFlet Home">
+        <img src="assets/images/logo.jpg" alt="AgroFlet Logo" width="42" height="42" />
+        <span class="header__brand">Agro<span class="header__brand--accent">Flet</span></span>
+      </a>
+
+      <nav class="header__nav" id="mainNav" aria-label="Navegación principal">
+        <ul class="header__links">
+          <li><a href="#hero" class="nav-link active" data-i18n="nav.home">Inicio</a></li>
+          <li><a href="#plans" class="nav-link" data-i18n="nav.plans">Planes</a></li>
+          <li><a href="#testimonials" class="nav-link" data-i18n="nav.testimonials">Testimonios</a></li>
+          <li><a href="#what-we-solve" class="nav-link" data-i18n="nav.whatWeSolve">La App</a></li>
+          <li><a href="#team" class="nav-link" data-i18n="nav.team">Equipo</a></li>
+          <li><a href="#videos" class="nav-link" data-i18n="nav.videos">Videos</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <button class="lang-toggle" id="langToggle" aria-label="Cambiar idioma">
+          <span class="lang-toggle__flag">🌐</span>
+          <span class="lang-toggle__label" id="langLabel">ES</span>
+        </button>
+        <button class="btn btn--outline btn--sm" id="btnSignIn" data-i18n="nav.signIn">Iniciar Sesión</button>
+        <button class="btn btn--primary btn--sm" id="btnSignUp" data-i18n="nav.signUp">Registrarse</button>
+        <button class="header__burger" id="burgerBtn" aria-label="Abrir menú" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+<!-- Mobile menu overlay (Modal Style) -->
+<div class="modal" id="mobileMenu">
+  <div class="modal__backdrop" id="mobileMenuBackdrop"></div>
+  <div class="modal__content modal__content--menu">
+    <button class="modal__close" id="closeMenuBtn" aria-label="Cerrar">&times;</button>
+    
+    <ul class="mobile-menu__links">
+      <li><a href="#hero" class="nav-link active" data-i18n="nav.home">Inicio</a></li>
+      <li><a href="#plans" class="nav-link" data-i18n="nav.plans">Planes</a></li>
+      <li><a href="#testimonials" class="nav-link" data-i18n="nav.testimonials">Testimonios</a></li>
+      <li><a href="#what-we-solve" class="nav-link" data-i18n="nav.whatWeSolve">La App</a></li>
+      <li><a href="#team" class="nav-link" data-i18n="nav.team">Equipo</a></li>
+      <li><a href="#videos" class="nav-link" data-i18n="nav.videos">Videos</a></li>
+    </ul>
+    
+    <div class="mobile-menu__actions">
+      <button class="btn btn--outline" id="btnSignInMobile" data-i18n="nav.signIn">Iniciar Sesión</button>
+      <button class="btn btn--primary" id="btnSignUpMobile" data-i18n="nav.signUp">Registrarse</button>
+    </div>
+  </div>
+</div>
+  </header>
+
+  <main>
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- HERO SECTION                                -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section id="hero" class="hero">
+      <div class="hero__canvas" id="heroCanvas">
+        <!-- Animated 3D background particles & road -->
+        <div class="hero__particles" id="heroParticles"></div>
+        <div class="hero__road">
+          <div class="hero__road-line"></div>
+          <div class="hero__road-line"></div>
+          <div class="hero__road-line"></div>
+        </div>
+        <div class="hero__truck hero__truck--1">🚛</div>
+        <div class="hero__truck hero__truck--2">🚚</div>
+        <div class="hero__truck hero__truck--3">🚛</div>
+        <div class="hero__field hero__field--1">🌾</div>
+        <div class="hero__field hero__field--2">🌿</div>
+        <div class="hero__field hero__field--3">🌱</div>
+      </div>
+
+      <div class="hero__overlay"></div>
+
+      <div class="hero__content container">
+        <div class="hero__badge" data-i18n="hero.badge">🚀 Plataforma de trazabilidad agrícola #1 en Perú</div>
+        <h1 class="hero__title">
+          <span class="hero__title-line" data-i18n="hero.title1">AgroFlet</span>
+          <span class="hero__title-line hero__title-line--sub" data-i18n="hero.title2">Digitalizando la trazabilidad
+            del</span>
+          <span class="hero__title-line hero__title-line--sub" data-i18n="hero.title3">transporte agrícola en
+            Perú</span>
+        </h1>
+        <p class="hero__subtitle" data-i18n="hero.subtitle">Confianza, transparencia y eficiencia en cada envío.</p>
+        <div class="hero__cta-group">
+          <button class="btn btn--primary btn--lg btn--glow" id="btnCtaHero" data-i18n="hero.cta">Empieza ahora</button>
+          <button class="btn btn--ghost btn--lg" id="btnCtaLearn" data-i18n="hero.ctaLearn">Conoce más ↓</button>
+        </div>
+        <div class="hero__stats">
+          <div class="hero__stat">
+            <span class="hero__stat-number" data-count="500">0</span><span>+</span>
+            <span class="hero__stat-label" data-i18n="hero.stat1">Transportistas</span>
+          </div>
+          <div class="hero__stat">
+            <span class="hero__stat-number" data-count="12000">0</span><span>+</span>
+            <span class="hero__stat-label" data-i18n="hero.stat2">Envíos rastreados</span>
+          </div>
+          <div class="hero__stat">
+            <span class="hero__stat-number" data-count="98">0</span><span>%</span>
+            <span class="hero__stat-label" data-i18n="hero.stat3">Satisfacción</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__scroll-indicator">
+        <div class="hero__scroll-mouse">
+          <div class="hero__scroll-wheel"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- PLANS SECTION                               -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section id="plans" class="plans section">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__tag" data-i18n="plans.tag">Suscripciones</span>
+          <h2 class="section__title" data-i18n="plans.title">Elige tu Plan Ideal</h2>
+          <p class="section__subtitle" data-i18n="plans.subtitle">Planes flexibles diseñados para productores,
+            transportistas y compradores mayoristas.</p>
+        </div>
+
+        <div class="plans__grid">
+          <!-- Basic Plan -->
+          <div class="plan-card" data-tilt>
+            <div class="plan-card__ribbon" data-i18n="plans.basic.ribbon"></div>
+            <div class="plan-card__icon">🌱</div>
+            <h3 class="plan-card__name" data-i18n="plans.basic.name">Básico</h3>
+            <div class="plan-card__price">
+              <span class="plan-card__currency">S/</span>
+              <span class="plan-card__amount">49</span>
+              <span class="plan-card__period" data-i18n="plans.period">/mes</span>
+            </div>
+            <p class="plan-card__units" data-i18n="plans.basic.units">Hasta 5 unidades de transporte</p>
+            <ul class="plan-card__features">
+              <li data-i18n="plans.basic.f1">✓ Rastreo GPS en tiempo real</li>
+              <li data-i18n="plans.basic.f2">✓ Registro de envíos básico</li>
+              <li data-i18n="plans.basic.f3">✓ Notificaciones por SMS</li>
+              <li data-i18n="plans.basic.f4">✓ Soporte por email</li>
+              <li class="disabled" data-i18n="plans.basic.f5">✕ Reportes avanzados</li>
+              <li class="disabled" data-i18n="plans.basic.f6">✕ API de integración</li>
+            </ul>
+            <button class="btn btn--outline btn--full" data-i18n="plans.cta">Elegir Plan</button>
+          </div>
+
+          <!-- Standard Plan -->
+          <div class="plan-card plan-card--featured" data-tilt>
+            <div class="plan-card__ribbon" data-i18n="plans.standard.ribbon">⭐ Más Popular</div>
+            <div class="plan-card__icon">🌿</div>
+            <h3 class="plan-card__name" data-i18n="plans.standard.name">Estándar</h3>
+            <div class="plan-card__price">
+              <span class="plan-card__currency">S/</span>
+              <span class="plan-card__amount">129</span>
+              <span class="plan-card__period" data-i18n="plans.period">/mes</span>
+            </div>
+            <p class="plan-card__units" data-i18n="plans.standard.units">Hasta 20 unidades de transporte</p>
+            <ul class="plan-card__features">
+              <li data-i18n="plans.standard.f1">✓ Todo del plan Básico</li>
+              <li data-i18n="plans.standard.f2">✓ Reportes avanzados</li>
+              <li data-i18n="plans.standard.f3">✓ Gestión de contratos</li>
+              <li data-i18n="plans.standard.f4">✓ Dashboard analítico</li>
+              <li data-i18n="plans.standard.f5">✓ Soporte prioritario 24/7</li>
+              <li class="disabled" data-i18n="plans.standard.f6">✕ API de integración</li>
+            </ul>
+            <button class="btn btn--primary btn--full btn--glow" data-i18n="plans.cta">Elegir Plan</button>
+          </div>
+
+          <!-- Professional Plan -->
+          <div class="plan-card" data-tilt>
+            <div class="plan-card__ribbon" data-i18n="plans.pro.ribbon">🏆 Enterprise</div>
+            <div class="plan-card__icon">🌳</div>
+            <h3 class="plan-card__name" data-i18n="plans.pro.name">Profesional</h3>
+            <div class="plan-card__price">
+              <span class="plan-card__currency">S/</span>
+              <span class="plan-card__amount">299</span>
+              <span class="plan-card__period" data-i18n="plans.period">/mes</span>
+            </div>
+            <p class="plan-card__units" data-i18n="plans.pro.units">Unidades ilimitadas</p>
+            <ul class="plan-card__features">
+              <li data-i18n="plans.pro.f1">✓ Todo del plan Estándar</li>
+              <li data-i18n="plans.pro.f2">✓ API de integración completa</li>
+              <li data-i18n="plans.pro.f3">✓ Multi-usuario & roles</li>
+              <li data-i18n="plans.pro.f4">✓ Predicción de rutas con IA</li>
+              <li data-i18n="plans.pro.f5">✓ Account manager dedicado</li>
+              <li data-i18n="plans.pro.f6">✓ SLA garantizado 99.9%</li>
+            </ul>
+            <button class="btn btn--outline btn--full" data-i18n="plans.ctaPro">Contactar ventas</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- TESTIMONIALS SECTION                        -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section id="testimonials" class="testimonials section section--dark">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__tag" data-i18n="testimonials.tag">Testimonios</span>
+          <h2 class="section__title" data-i18n="testimonials.title">Lo que dicen nuestros usuarios</h2>
+          <p class="section__subtitle" data-i18n="testimonials.subtitle">Productores, transportistas y compradores
+            confían en AgroFlet.</p>
+        </div>
+
+        <div class="testimonials__carousel" id="testimonialCarousel">
+          <div class="testimonials__track" id="testimonialTrack">
+            <!-- Card 1 -->
+            <div class="testimonial-card">
+              <div class="testimonial-card__stars">★★★★★</div>
+              <blockquote class="testimonial-card__quote" data-i18n="testimonials.t1.quote">
+                "Desde que usamos AgroFlet, redujimos las pérdidas post-cosecha en un 40%. La trazabilidad en tiempo
+                real cambió nuestro negocio."
+              </blockquote>
+              <div class="testimonial-card__author">
+                <div class="testimonial-card__avatar">👨‍🌾</div>
+                <div>
+                  <p class="testimonial-card__name">Carlos Mendoza</p>
+                  <p class="testimonial-card__role" data-i18n="testimonials.t1.role">Productor de papa — Junín</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="testimonial-card">
+              <div class="testimonial-card__stars">★★★★★</div>
+              <blockquote class="testimonial-card__quote" data-i18n="testimonials.t2.quote">
+                "AgroFlet me permite gestionar 15 camiones de manera eficiente. Las alertas y el seguimiento GPS son
+                increíbles."
+              </blockquote>
+              <div class="testimonial-card__author">
+                <div class="testimonial-card__avatar">🚛</div>
+                <div>
+                  <p class="testimonial-card__name">María Quispe</p>
+                  <p class="testimonial-card__role" data-i18n="testimonials.t2.role">Transportista — Arequipa</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="testimonial-card">
+              <div class="testimonial-card__stars">★★★★★</div>
+              <blockquote class="testimonial-card__quote" data-i18n="testimonials.t3.quote">
+                "Como comprador mayorista, necesitaba saber exactamente cuándo llegan mis pedidos. AgroFlet me da esa
+                tranquilidad."
+              </blockquote>
+              <div class="testimonial-card__author">
+                <div class="testimonial-card__avatar">📦</div>
+                <div>
+                  <p class="testimonial-card__name">Roberto Huamán</p>
+                  <p class="testimonial-card__role" data-i18n="testimonials.t3.role">Mayorista — Lima (Mercado Santa
+                    Anita)</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="testimonial-card">
+              <div class="testimonial-card__stars">★★★★☆</div>
+              <blockquote class="testimonial-card__quote" data-i18n="testimonials.t4.quote">
+                "La transparencia que ofrece AgroFlet en los contratos de transporte nos ha generado más confianza con
+                nuestros proveedores."
+              </blockquote>
+              <div class="testimonial-card__author">
+                <div class="testimonial-card__avatar">🏢</div>
+                <div>
+                  <p class="testimonial-card__name">Ana Rodríguez</p>
+                  <p class="testimonial-card__role" data-i18n="testimonials.t4.role">Gerente de Operaciones — Ica</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="testimonial-card">
+              <div class="testimonial-card__stars">★★★★★</div>
+              <blockquote class="testimonial-card__quote" data-i18n="testimonials.t5.quote">
+                "Antes perdíamos horas llamando para saber dónde estaban los camiones. Ahora lo veo todo desde mi
+                celular en tiempo real."
+              </blockquote>
+              <div class="testimonial-card__author">
+                <div class="testimonial-card__avatar">👩‍💼</div>
+                <div>
+                  <p class="testimonial-card__name">Luis Paredes</p>
+                  <p class="testimonial-card__role" data-i18n="testimonials.t5.role">Productor de mango — Piura</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonials__controls">
+            <button class="testimonials__btn testimonials__btn--prev" id="prevTestimonial"
+              aria-label="Anterior">❮</button>
+            <div class="testimonials__dots" id="testimonialDots"></div>
+            <button class="testimonials__btn testimonials__btn--next" id="nextTestimonial"
+              aria-label="Siguiente">❯</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- WHAT WE SOLVE SECTION                       -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section id="what-we-solve" class="solve section">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__tag" data-i18n="solve.tag">¿Qué resuelve AgroFlet?</span>
+          <h2 class="section__title" data-i18n="solve.title">La App que transforma la logística agrícola</h2>
+          <p class="section__subtitle" data-i18n="solve.subtitle">Soluciones reales para los desafíos diarios del
+            transporte de productos agrícolas en Perú.</p>
+        </div>
+
+        <div class="solve__grid">
+          <div class="solve-card" data-tilt>
+            <div class="solve-card__icon">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="32" cy="32" r="30" stroke="currentColor" stroke-width="2" fill="none" opacity="0.2" />
+                <path d="M32 12C22 12 14 20 14 30c0 14 18 22 18 22s18-8 18-22c0-10-8-18-18-18z" fill="currentColor"
+                  opacity="0.15" />
+                <circle cx="32" cy="28" r="6" fill="currentColor" />
+              </svg>
+            </div>
+            <h3 class="solve-card__title" data-i18n="solve.c1.title">Rastreo GPS en Tiempo Real</h3>
+            <p class="solve-card__desc" data-i18n="solve.c1.desc">Monitorea cada vehículo con precisión satelital. Sabe
+              exactamente dónde está tu carga en todo momento.</p>
+          </div>
+
+          <div class="solve-card" data-tilt>
+            <div class="solve-card__icon">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="8" y="16" width="48" height="32" rx="4" stroke="currentColor" stroke-width="2" fill="none"
+                  opacity="0.2" />
+                <path d="M16 28h32M16 36h20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                <circle cx="48" cy="36" r="4" fill="currentColor" opacity="0.3" />
+                <path d="M20 22l4 4 8-8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+            <h3 class="solve-card__title" data-i18n="solve.c2.title">Contratos Digitales</h3>
+            <p class="solve-card__desc" data-i18n="solve.c2.desc">Formaliza acuerdos entre productores y transportistas
+              con contratos digitales seguros y verificables.</p>
+          </div>
+
+          <div class="solve-card" data-tilt>
+            <div class="solve-card__icon">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="10" y="10" width="44" height="44" rx="6" stroke="currentColor" stroke-width="2" fill="none"
+                  opacity="0.2" />
+                <path d="M20 40l8-12 6 8 10-16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <circle cx="20" cy="40" r="2.5" fill="currentColor" />
+                <circle cx="28" cy="28" r="2.5" fill="currentColor" />
+                <circle cx="34" cy="36" r="2.5" fill="currentColor" />
+                <circle cx="44" cy="20" r="2.5" fill="currentColor" />
+              </svg>
+            </div>
+            <h3 class="solve-card__title" data-i18n="solve.c3.title">Reducción de Pérdidas</h3>
+            <p class="solve-card__desc" data-i18n="solve.c3.desc">Alertas inteligentes de temperatura, humedad y
+              retrasos que evitan pérdidas post-cosecha hasta un 40%.</p>
+          </div>
+
+          <div class="solve-card" data-tilt>
+            <div class="solve-card__icon">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 48l14-8 10 4 10-12 10-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path d="M10 48l14-8 10 4 10-12 10-4v16H10z" fill="currentColor" opacity="0.1" />
+                <circle cx="24" cy="40" r="3" fill="currentColor" opacity="0.4" />
+                <circle cx="34" cy="44" r="3" fill="currentColor" opacity="0.4" />
+                <circle cx="44" cy="32" r="3" fill="currentColor" opacity="0.4" />
+              </svg>
+            </div>
+            <h3 class="solve-card__title" data-i18n="solve.c4.title">Rutas Optimizadas con IA</h3>
+            <p class="solve-card__desc" data-i18n="solve.c4.desc">Algoritmos inteligentes que sugieren las mejores rutas
+              considerando clima, tráfico y estado de carreteras.</p>
+          </div>
+
+          <div class="solve-card" data-tilt>
+            <div class="solve-card__icon">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="22" cy="26" r="8" stroke="currentColor" stroke-width="2" fill="none" opacity="0.3" />
+                <circle cx="42" cy="26" r="8" stroke="currentColor" stroke-width="2" fill="none" opacity="0.3" />
+                <circle cx="32" cy="42" r="8" stroke="currentColor" stroke-width="2" fill="none" opacity="0.3" />
+                <path d="M28 28h8M28 40l4-8 4 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </div>
+            <h3 class="solve-card__title" data-i18n="solve.c5.title">Red de Confianza</h3>
+            <p class="solve-card__desc" data-i18n="solve.c5.desc">Conecta productores, transportistas y compradores en
+              una plataforma verificada con reputación transparente.</p>
+          </div>
+
+          <div class="solve-card" data-tilt>
+            <div class="solve-card__icon">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="16" y="8" width="32" height="48" rx="4" stroke="currentColor" stroke-width="2" fill="none"
+                  opacity="0.2" />
+                <rect x="20" y="14" width="24" height="30" rx="2" fill="currentColor" opacity="0.08" />
+                <circle cx="32" cy="52" r="3" stroke="currentColor" stroke-width="2" fill="none" />
+                <path d="M26 24h12M26 30h8" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </div>
+            <h3 class="solve-card__title" data-i18n="solve.c6.title">App Móvil Intuitiva</h3>
+            <p class="solve-card__desc" data-i18n="solve.c6.desc">Gestiona todo desde tu celular. Interfaz simple
+              diseñada para usuarios con cualquier nivel de experiencia digital.</p>
+          </div>
+        </div>
+      </div>
+    </section>
