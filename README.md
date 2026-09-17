@@ -21,15 +21,20 @@
 
 ## 📋 Tabla de Contenidos
 
-- [Acerca del Proyecto](#-acerca-del-proyecto)
-- [Estructura del Proyecto](#-estructura-del-proyecto)
-- [Características Principales](#-características-principales)
-- [Tecnologías Utilizadas](#-tecnologías-utilizadas)
-- [Instalación y Uso Local](#-instalación-y-uso-local)
-- [Internacionalización (i18n)](#-internacionalización-i18n)
-- [Diseño y Buenas Prácticas](#-diseño-y-buenas-prácticas)
-- [Equipo Fundador](#-equipo-fundador)
-- [Licencia](#-licencia)
+Contenido
+
+- [Acerca del proyecto](#acerca-del-proyecto)
+- [Alcance de este repositorio](#alcance-de-este-repositorio)
+- [Tecnologías](#tecnologías)
+- [Estructura](#estructura)
+- [Instalación y uso local](#instalación-y-uso-local)
+- [Internacionalización](#internacionalización)
+- [Diseño y accesibilidad](#diseño-y-accesibilidad)
+- [Contribuciones](#contribuciones)
+- [Despliegue en GitHub Pages](#despliegue-en-github-pages)
+- [Equipo](#equipo)
+- [Licencia](#licencia)
+
 
 ---
 
