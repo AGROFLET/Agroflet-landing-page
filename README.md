@@ -21,21 +21,23 @@
 
 ## 📋 Tabla de Contenidos
 
-Contenido
-
-- [Acerca del proyecto](#acerca-del-proyecto)
+- [Acerca del Proyecto](#-acerca-del-proyecto)
 - [Alcance de este repositorio](#alcance-de-este-repositorio)
+  - [Funciones implementadas en la landing](#funciones-implementadas-en-la-landing)
+  - [Límites de la demostración](#límites-de-la-demostración)
 - [Tecnologías](#tecnologías)
-- [Estructura](#estructura)
-- [Características Principales](#Características Principales)
-- [Instalación y uso local](#instalación-y-uso-local)
-- [Internacionalización](#internacionalización)
-- [Diseño y accesibilidad](#diseño-y-accesibilidad)
-- [Contribuciones](#contribuciones)
-- [Despliegue en GitHub Pages](#despliegue-en-github-pages)
-- [Equipo](#equipo)
-- [Licencia](#licencia)
-
+- [Estructura del Proyecto](#-estructura-del-proyecto)
+- [Características Principales](#-características-principales)
+  - [Sistema Multilingüe](#1-sistema-multilingüe-i18n-es--en)
+  - [Carrusel de Testimonios Avanzado](#2-carrusel-de-testimonios-avanzado)
+  - [Modales Interactivos](#3-modales-interactivos)
+  - [Animaciones y Experiencia Visual](#4-animaciones-y-experiencia-visual-glassmorphism--3d-tilt)
+- [Tecnologías Utilizadas](#-tecnologías-utilizadas)
+- [Instalación y Uso Local](#-instalación-y-uso-local)
+  - [Visualización directa](#opción-1-visualización-directa)
+  - [Servidor local](#opción-2-servidor-local-recomendado-para-desarrollo)
+- [Equipo Fundador](#-equipo-fundador)
+- [Licencia](#-licencia)
 
 ---
 
