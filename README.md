@@ -27,6 +27,7 @@ Contenido
 - [Alcance de este repositorio](#alcance-de-este-repositorio)
 - [Tecnologías](#tecnologías)
 - [Estructura](#estructura)
+- [Características Principales](#Características Principales)
 - [Instalación y uso local](#instalación-y-uso-local)
 - [Internacionalización](#internacionalización)
 - [Diseño y accesibilidad](#diseño-y-accesibilidad)
@@ -48,6 +49,44 @@ En el Perú, gran parte de los productos agrícolas sufre pérdidas significativ
 - **Contratos Digitales Verificables:** Formalización rápida y segura de acuerdos de transporte entre productores y fletistas.
 - **Reducción de Pérdidas:** Alertas tempranas de demoras, temperatura y contingencias viales que disminuyen hasta un 40% las mermas.
 - **Transparencia y Calificación:** Sistema de reputación bidireccional que construye una red de confianza para el agro nacional.
+
+---
+## Alcance de este repositorio
+
+### Funciones implementadas en la landing
+
+- Navegación por secciones y menú para dispositivos móviles.
+- Cambio de idioma español/inglés con persistencia de la preferencia.
+- Carrusel de testimonios con controles, rotación automática e interacción táctil y mediante mouse.
+- Formularios de registro e inicio de sesión con validaciones en el navegador.
+- Indicador de fortaleza de contraseña y simulación local de sesión.
+- Modales para contenido audiovisual, información legal y preguntas frecuentes.
+- Selección de planes con respuestas visuales de demostración.
+- Partículas decorativas en el hero, contadores animados y efectos de aparición y profundidad.
+
+### Límites de la demostración
+
+Los formularios no crean cuentas en un servidor ni verifican credenciales contra un backend. El estado guardado en `localStorage` solo permite demostrar cambios en la interfaz y no proporciona autenticación ni autorización reales.
+
+Este repositorio no implementa seguimiento GPS, contratos digitales, cobros, alertas SMS, sensores de temperatura ni predicción de rutas. Su aparición en el contenido comercial no demuestra que esos servicios estén disponibles.
+
+Las cifras, precios y testimonios deben tratarse como contenido de demostración académica mientras no exista evidencia verificable. No se presenta la reducción del 40 % de mermas como un resultado validado.
+
+---
+
+## Tecnologías
+
+| Capa | Tecnología |
+| :--- | :--- |
+| Estructura | HTML5 |
+| Estilos | CSS3, variables CSS, Flexbox y Grid |
+| Interactividad | JavaScript moderno, sin framework |
+| Animación | CSS, Canvas e IntersectionObserver |
+| Preferencias locales | Web Storage API (`localStorage`) |
+| Tipografía | Inter, cargada desde Google Fonts |
+| Publicación prevista | GitHub Pages |
+
+No requiere compilación, instalación de paquetes ni un servidor de aplicación. Los archivos se sirven directamente desde un alojamiento estático. Google Fonts y cualquier contenido audiovisual remoto requieren conexión a sus servicios externos.
 
 ---
 
