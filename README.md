@@ -13,7 +13,6 @@
   Plataforma tecnológica diseñada para transformar la cadena logística agraria en el Perú, conectando productores, transportistas y compradores mayoristas con trazabilidad GPS en tiempo real, contratos digitales y reducción de mermas post-cosecha.
 </p>
 
-[Ver Demo en Vivo](#) • [Documentación](docs/terms-and-conditions.html) • [Reportar Problema](#)
 
 </div>
 
