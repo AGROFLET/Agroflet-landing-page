@@ -23,6 +23,23 @@ document.addEventListener('DOMContentLoaded', () => {
   // ─── 1. Internationalization (ES/EN) ───
   const translations = {
     es: {
+      'contact.tag': 'Contacto',
+      'contact.title': 'Déjanos tus datos',
+      'contact.subtitle': 'Cuéntanos cómo podemos ayudarte con AgroFlet.',
+      'contact.name': 'Nombre completo *',
+      'contact.email': 'Correo electrónico *',
+      'contact.phone': 'Teléfono (opcional)',
+      'contact.role': 'Tipo de usuario *',
+      'contact.other': 'Otro',
+      'contact.message': 'Mensaje *',
+      'contact.notice': 'Demo: tus datos se guardan únicamente en este navegador. No se envían al equipo de AgroFlet.',
+      'contact.consent': 'Acepto guardar mis datos en este navegador para esta demostración. *',
+      'contact.submit': 'Guardar mis datos',
+      'contact.success': 'Tus datos se guardaron en este navegador. Gracias por tu interés en AgroFlet.',
+      'contact.error': 'No pudimos guardar tus datos. Revisa el almacenamiento de tu navegador e inténtalo nuevamente.',
+      'contact.nameInvalid': 'Ingresa al menos 3 caracteres, sin contar espacios al inicio o al final.',
+      'contact.messageInvalid': 'Escribe un mensaje de al menos 10 caracteres, sin contar espacios al inicio o al final.',
+      'contact.phoneInvalid': 'Ingresa un teléfono con entre 7 y 15 dígitos.',
       'nav.home': 'Inicio',
       'nav.plans': 'Planes',
       'nav.testimonials': 'Testimonios',
@@ -176,6 +193,23 @@ document.addEventListener('DOMContentLoaded', () => {
       'terms.title': 'Términos de Servicio'
     },
     en: {
+      'contact.tag': 'Contact',
+      'contact.title': 'Leave your details',
+      'contact.subtitle': 'Tell us how we can help you with AgroFlet.',
+      'contact.name': 'Full name *',
+      'contact.email': 'Email address *',
+      'contact.phone': 'Phone (optional)',
+      'contact.role': 'User type *',
+      'contact.other': 'Other',
+      'contact.message': 'Message *',
+      'contact.notice': 'Demo: your details are saved only in this browser. They are not sent to the AgroFlet team.',
+      'contact.consent': 'I agree to save my details in this browser for this demonstration. *',
+      'contact.submit': 'Save my details',
+      'contact.success': 'Your details were saved in this browser. Thank you for your interest in AgroFlet.',
+      'contact.error': 'We could not save your details. Check your browser storage and try again.',
+      'contact.nameInvalid': 'Enter at least 3 characters, excluding leading or trailing spaces.',
+      'contact.messageInvalid': 'Enter at least 10 characters, excluding leading or trailing spaces.',
+      'contact.phoneInvalid': 'Enter a phone number with 7 to 15 digits.',
       'nav.home': 'Home',
       'nav.plans': 'Plans',
       'nav.testimonials': 'Testimonials',
@@ -375,6 +409,9 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       document.title = 'AgroFlet — Digitalizando la trazabilidad del transporte agrícola en Perú';
     }
+
+    // Keep contact validation messages in the selected language.
+    validateContactFields();
 
     // Refresh user session display if logged in
     renderUserSession();
@@ -1338,6 +1375,70 @@ document.addEventListener('DOMContentLoaded', () => {
       heroContent.style.opacity = Math.max(0, 1 - (scrollY / window.innerHeight) * 0.7).toFixed(2);
     }
   }, { passive: true });
+
+  // UH28 — Store demonstration enquiries locally, without changing the auth flow.
+  const contactForm = document.getElementById('contactForm');
+  const contactStatus = document.getElementById('contactStatus');
+  const contactStorageKey = 'agroflet_contacts';
+
+  function validateContactFields() {
+    if (!contactForm) return;
+    const name = contactForm.elements.namedItem('name');
+    const message = contactForm.elements.namedItem('message');
+    const phone = contactForm.elements.namedItem('phone');
+    name.setCustomValidity(name.value && name.value.trim().length < 3
+      ? translations[currentLang]['contact.nameInvalid'] : '');
+    message.setCustomValidity(message.value && message.value.trim().length < 10
+      ? translations[currentLang]['contact.messageInvalid'] : '');
+    const phoneDigits = phone.value.replace(/\D/g, '');
+    phone.setCustomValidity(phone.value && (!/^\+?[\d\s()-]+$/.test(phone.value.trim())
+      || phoneDigits.length < 7 || phoneDigits.length > 15)
+      ? translations[currentLang]['contact.phoneInvalid'] : '');
+  }
+
+  if (contactForm) {
+    contactForm.addEventListener('input', () => {
+      validateContactFields();
+      contactStatus.textContent = '';
+      contactStatus.removeAttribute('data-i18n');
+      contactStatus.classList.remove('contact-form__status--error');
+    });
+
+    contactForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      validateContactFields();
+      if (!contactForm.reportValidity()) return;
+
+      const fields = contactForm.elements;
+      const enquiry = {
+        name: fields.namedItem('name').value.trim(),
+        email: fields.namedItem('email').value.trim(),
+        phone: fields.namedItem('phone').value.trim(),
+        role: fields.namedItem('role').value,
+        message: fields.namedItem('message').value.trim(),
+        consent: fields.namedItem('consent').checked,
+        createdAt: new Date().toISOString()
+      };
+
+      try {
+        const storedContacts = localStorage.getItem(contactStorageKey);
+        const contacts = storedContacts ? JSON.parse(storedContacts) : [];
+        if (!Array.isArray(contacts)) throw new Error('Invalid contact storage');
+        contacts.push(enquiry);
+        localStorage.setItem(contactStorageKey, JSON.stringify(contacts));
+        contactForm.reset();
+        validateContactFields();
+        contactStatus.classList.remove('contact-form__status--error');
+        contactStatus.setAttribute('data-i18n', 'contact.success');
+        contactStatus.textContent = translations[currentLang]['contact.success'];
+      } catch (error) {
+        // Keep the entered details so the visitor can retry after a storage error.
+        contactStatus.classList.add('contact-form__status--error');
+        contactStatus.setAttribute('data-i18n', 'contact.error');
+        contactStatus.textContent = translations[currentLang]['contact.error'];
+      }
+    });
+  }
 
   // ─── 18. Initialize System ───
   setLanguage(currentLang);

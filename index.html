@@ -563,6 +563,54 @@
         </div>
       </div>
     </section>
+
+    <!-- UH28 — Contact form (Sprint 2) -->
+    <section id="contact" class="contact section" aria-labelledby="contactTitle">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__tag" data-i18n="contact.tag">Contacto</span>
+          <h2 id="contactTitle" class="section__title" data-i18n="contact.title">Déjanos tus datos</h2>
+          <p class="section__subtitle" data-i18n="contact.subtitle">Cuéntanos cómo podemos ayudarte con AgroFlet.</p>
+        </div>
+        <form id="contactForm" class="contact-form" aria-describedby="contactNotice">
+          <div class="contact-form__grid">
+            <div class="contact-form__field">
+              <label for="contactName" data-i18n="contact.name">Nombre completo *</label>
+              <input id="contactName" name="name" type="text" autocomplete="name" required minlength="3" maxlength="100" />
+            </div>
+            <div class="contact-form__field">
+              <label for="contactEmail" data-i18n="contact.email">Correo electrónico *</label>
+              <input id="contactEmail" name="email" type="email" autocomplete="email" required maxlength="254" />
+            </div>
+            <div class="contact-form__field">
+              <label for="contactPhone" data-i18n="contact.phone">Teléfono (opcional)</label>
+              <input id="contactPhone" name="phone" type="tel" autocomplete="tel" maxlength="25" />
+            </div>
+            <div class="contact-form__field">
+              <label for="contactRole" data-i18n="contact.role">Tipo de usuario *</label>
+              <select id="contactRole" name="role" required>
+                <option value="" data-i18n="auth.roleSelect">Selecciona...</option>
+                <option value="producer" data-i18n="auth.roleProducer">Productor</option>
+                <option value="transporter" data-i18n="auth.roleTransporter">Transportista</option>
+                <option value="buyer" data-i18n="auth.roleBuyer">Comprador mayorista</option>
+                <option value="other" data-i18n="contact.other">Otro</option>
+              </select>
+            </div>
+            <div class="contact-form__field contact-form__field--full">
+              <label for="contactMessage" data-i18n="contact.message">Mensaje *</label>
+              <textarea id="contactMessage" name="message" rows="5" required minlength="10" maxlength="2000"></textarea>
+            </div>
+          </div>
+          <p id="contactNotice" class="contact-form__notice" data-i18n="contact.notice">Demo: tus datos se guardan únicamente en este navegador. No se envían al equipo de AgroFlet.</p>
+          <label class="contact-form__consent" for="contactConsent">
+            <input id="contactConsent" name="consent" type="checkbox" required />
+            <span data-i18n="contact.consent">Acepto guardar mis datos en este navegador para esta demostración. *</span>
+          </label>
+          <button type="submit" class="btn btn--primary btn--full btn--lg" data-i18n="contact.submit">Guardar mis datos</button>
+          <p id="contactStatus" class="contact-form__status" role="status" aria-live="polite" aria-atomic="true"></p>
+        </form>
+      </div>
+    </section>
   </main>
 
   <!-- ═══════════════════════════════════════════ -->
@@ -599,6 +647,7 @@
         <div class="footer__col">
           <h5 data-i18n="footer.contact">Contacto</h5>
           <ul>
+            <li><a href="#contact" data-i18n="contact.title">Déjanos tus datos</a></li>
             <li><a href="mailto:info@agroflet.pe">info@agroflet.pe</a></li>
             <li><a href="tel:+51999999999">+51 999 999 999</a></li>
             <li>Lima, Perú 🇵🇪</li>
