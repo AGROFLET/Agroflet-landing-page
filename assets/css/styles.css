@@ -1684,7 +1684,6 @@ input, select, textarea { font-family: inherit; font-size: 1rem; }
 
 /* UH28 — Contact form (Sprint 2) */
 .contact {
-  background: var(--gray-50);
   scroll-margin-top: var(--header-height);
 }
 
@@ -1692,8 +1691,8 @@ input, select, textarea { font-family: inherit; font-size: 1rem; }
   max-width: 760px;
   margin: 0 auto;
   padding: var(--space-2xl);
-  background: var(--white);
-  border: 1px solid var(--gray-200);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-md);
 }
@@ -1710,7 +1709,7 @@ input, select, textarea { font-family: inherit; font-size: 1rem; }
   display: block;
   margin-bottom: var(--space-sm);
   font-weight: 600;
-  color: var(--navy);
+  color: var(--white);
 }
 
 .contact-form__field input,
@@ -1719,10 +1718,10 @@ input, select, textarea { font-family: inherit; font-size: 1rem; }
   width: 100%;
   min-width: 0;
   padding: 0.85rem 1rem;
-  border: 1px solid var(--gray-400);
+  border: 1px solid rgba(255, 255, 255, 0.35);
   border-radius: var(--radius-sm);
-  background: var(--white);
-  color: var(--gray-900);
+  background: var(--navy-dark);
+  color: var(--white);
   font: inherit;
 }
 
@@ -1732,14 +1731,14 @@ input, select, textarea { font-family: inherit; font-size: 1rem; }
 .contact-form select:focus-visible,
 .contact-form textarea:focus-visible,
 .contact-form button:focus-visible {
-  outline: 3px solid var(--navy);
+  outline: 3px solid var(--green-light);
   outline-offset: 3px;
 }
 
 .contact-form__notice,
 .contact-form__consent {
   margin: var(--space-lg) 0;
-  color: var(--gray-700);
+  color: rgba(255, 255, 255, 0.85);
   font-size: 0.875rem;
   line-height: 1.6;
 }
@@ -1758,13 +1757,13 @@ input, select, textarea { font-family: inherit; font-size: 1rem; }
 
 .contact-form__status {
   margin-top: var(--space-md);
-  color: var(--green-dark);
+  color: var(--green-light);
   font-weight: 600;
   overflow-wrap: anywhere;
 }
 
 .contact-form__status:empty { display: none; }
-.contact-form__status--error { color: #B42318; }
+.contact-form__status--error { color: #FDA29B; }
 
 @media (max-width: 767px) {
   .contact-form { padding: var(--space-lg); }
